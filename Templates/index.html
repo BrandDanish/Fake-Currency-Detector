@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Currency Detector</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: url('/static/back.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        header {
+            background-color: #335;
+            color: #fff;
+            padding: 10px 0;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .container1 {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            width:55px;
+            height: 50px; /* Adjust size of the logo image as needed */
+            margin-right: 20px;
+            border-radius:50%;
+        }
+        .logo span {
+            font-size: 24px;
+            font-weight: bold;
+           
+        }
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 80px; /* Add margin to push it below the header */
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content .card {
+            padding: 20px;
+            border-radius: 8px;
+            color: white;
+        }
+        .content .card h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .content .card p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .file-upload-label {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            margin-right: 20px;
+            margin-left: 30px;
+        }
+        /* Hide the default file input */
+        .file-upload-input {
+            display: none;
+        }
+        /* Add styling to the file input wrapper */
+        .file-upload-wrapper {
+            display: inline-block;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container1">
+            <div class="logo">
+                <img src="/static/logo.png" alt="Logo"> <!-- Replace with your logo image path -->
+                <span>Fake Currency Detector</span>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <div class="card">
+                <h2>SELECT NOTES</h2>
+                <p>Please select note picture by clicking the button below!</p>
+                <form action="/" method="post" enctype="multipart/form-data">
+                    <div class="file-upload-wrapper">
+                        <label for="file-upload" class="file-upload-label">Choose File</label>
+                        <input type="file" id="file-upload" name="file" class="file-upload-input">
+                    </div>
+                    <input type="submit" value="Detect" class="file-upload-label">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
